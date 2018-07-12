@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop = "http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	>
+	
+	<aop:aspectj-autoproxy />
+	
+
+	<bean id="calculatorService"
+		class="com.example.demo.CalculatorService"></bean>
+
+	<bean id="beforeMethod" class="com.example.demo.BeforeMethod"></bean>
+
+	<!--<aop:config>
+		<aop:aspect id="before" ref="beforeMethod" >
+			<aop:pointcut id="abc"
+				expression="execution(* com.example.demo.*.*(..))"/>
+			<aop:before pointcut-ref="abc" method="beforeAdvise"/>
+		</aop:aspect>
+	</aop:config>
+	-->
+	
+	<!-- <bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean"> 
+		<property name="target" ref="calculatorService" /> <property name="interceptorNames"> 
+		<list> <value>BeforeMethod</value> </list> </property> </bean> -->
+
+</beans>
